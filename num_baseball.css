@@ -1,0 +1,195 @@
+body {
+    margin: 0px;
+}
+
+#box {
+    width: 100%;
+    /* height: 997px; */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* 가상 요소(::after) 사용 (이미 작성된 HTML에 새로운 요소를 주기 위해, :after는 HTML이 끝날 때 추가되는 가상 요소)
+배경화면만 투명하게 만들기 위해서는 배경화면의 가상요소를 생성하여 여기에 배경 이미지와 투명도를 지정 
+opacity를 이용하여 HTML의 요소를 투명하게 만듦
+가상요소를 실행시키려면 반드시 content 속성을 넣어줘야 함 그냥 텍스트 없이 꾸밈 요소로만 사용하려면  content:""
+*/
+#box::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: url("/Users/gimseong-eon/Desktop/Workspace/StageusWorkspace/Week3/Week3_H/playground.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+    /* border: none; */
+}
+
+/* 전광판 부분, 여러 요소가 들어갈 것을 생각하여 flex를 했지만,, */
+#Top {
+    height: 284px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 전광판 부분, 경기 결과에 따라 전광판이 바뀌게 하고 싶었지만,, */
+#billboard {
+    height: 200px;
+    width: 500px;
+    border: 3px solid darkviolet;
+    /* position: relative; */
+}
+
+#Mid {
+    height: 427px;
+    z-index: 1;
+    display: flex;
+}
+
+.baseball {
+    position: relative;
+    margin-top: 40px;
+}
+
+#result_box_1 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    margin-top: 40%;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#result_box_2 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    margin-top: 40%;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#result_box_3 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    margin-top: 40%;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#baseball_img_1 {
+    width: 350px;
+    height: 350px;
+}
+
+#baseball_img_2 {
+    width: 350px;
+    height: 350px;
+}
+
+#baseball_img_3 {
+    width: 350px;
+    height: 350px;
+}
+
+#game_result {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.result_font {
+    font-size: 40px;
+}
+
+
+
+#Bottom {
+    height: 284px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#Number {
+    height: 280px;
+}
+
+.button {
+    width: 140px;
+    height: 280px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 40px;
+
+}
+
+.button:hover {
+    width: 140px;
+    height: 280px;
+    color: black;
+    background-color: lightgray;
+    border: 1px solid black;
+    font-size: 40px;
+}
+
+#start_select_cancle {
+    height: 280px;
+    width: 288px;
+}
+
+#start {
+    height: 96px;
+    width: 288px;
+    border: 1px solid black;
+    background-color: orangered;
+    font-size: 20px;
+}
+
+#start:hover {
+    height: 96px;
+    width: 288px;
+    border: 1px solid black;
+    background-color: red;
+    font-size: 40px;
+}
+
+#select {
+    height: 96px;
+    width: 288px;
+    border: 1px solid black;
+    background-color: chartreuse;
+    font-size: 20px;
+}
+
+#select:hover {
+    height: 96px;
+    width: 288px;
+    border: 1px solid black;
+    background-color: green;
+    font-size: 40px;
+}
+
+#cancle {
+    height: 96px;
+    width: 288px;
+    border: 1px solid black;
+    background-color: aqua;
+    font-size: 20px;
+}
+
+#cancle:hover {
+    height: 96px;
+    width: 288px;
+    border: 1px solid black;
+    background-color: blue;
+    font-size: 40px;
+}

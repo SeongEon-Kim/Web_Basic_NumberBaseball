@@ -1,0 +1,104 @@
+<!-- 
+기본 룰 
+숫자 중복 불가능
+숫자 다 맞추고, 위치도 맞으면 스트라이크
+숫자 다 맞추고, 위치를 틀리면 볼
+숫자 틀리고, 위치도 틀리면 아웃 
+123인데 324라 하면 1스트라이크 1볼
+-->
+<!-- 
+    과제 1. 유튜브가 가로 줄어듦에 따라 검색창이 사라지고, 메뉴가 작아짐, 동영상이 가득차면서 점차 줄어들다가 점점 작아지고 3개로 바껴서 반복
+    -> Media Query(웹 브라우저의 가로 길이에 따라 CSS를 변화시킬 수 있는 기능) , 피드백 반영, (태현: 트랜지션)
+
+    과제 2. JavaScript 숫자 야구
+    A: 랜덤 숫자 3자리 생각 ex) 235
+    B: 말하기 아예 다르면 1스트라이크, 위치가 다르면 개수에 따라 +1볼, 
+    공부: 난수 개념, 랜덤 숫자 기억 기능, 사용자가 숫자를 입력해서 정답을 누르면 결과가 나오도록 (text가 아니라 숫자를 눌러서) 위에 공간 3개 숫자 선택하고 정답 제출
+-->
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+    <link rel="stylesheet" type="text/css" href="num_baseball.css">
+</head>
+
+<body>
+    <div id="box">
+        <div id="Top">
+            <div id="billboard">
+                <img src="Billboard.png" alt="오류">
+                <!--동적 이미지 생성? 을 하려고 했지만 실패,,, 
+                    <img src="Zero.png" id="billboard()">
+                <img id="Img" src="Zero.png"> -->
+            </div>
+        </div>
+        <main id="Mid">
+            <div class="baseball">
+                <div id="result_box_1"></div>
+                <img src="Baseball.png" alt="오류" class="baseball_img_1">
+            </div>
+            <div class="baseball">
+                <div id="result_box_2"></div>
+                <img src="Baseball.png" alt="오류" class="baseball_img_2">
+            </div>
+            <div class="baseball">
+                <div id="result_box_3"></div>
+                <img src="Baseball.png" alt="오류" class="baseball_img_3">
+            </div>
+            <div id="game_result">
+                <div class="result_font">
+                    <span id="ball_result">0</span>
+                    <span>Ball</span>
+                </div>
+                <div class="result_font">
+                    <span id="strike_result">0</span>
+                    <span>Strike</span>
+                </div>
+                <div class="result_font">
+                    <span id="out_result">0</span>
+                    <span>Out</span>
+                </div>
+                <div class="result_font">
+                    <span id="num_game">0</span>
+                    <span>회</span>
+                </div>
+                <div class="result_font">
+                    <span id="result"></span>
+                </div>
+            </div>
+
+        </main>
+        <main id="Bottom">
+            <div id="Number">
+                <input type="button" value="1" onclick="btn(1)" class="button">
+                <input type="button" value="2" onclick="btn(2)" class="button">
+                <input type="button" value="3" onclick="btn(3)" class="button">
+                <input type="button" value="4" onclick="btn(4)" class="button">
+                <input type="button" value="5" onclick="btn(5)" class="button">
+                <input type="button" value="6" onclick="btn(6)" class="button">
+                <input type="button" value="7" onclick="btn(7)" class="button">
+                <input type="button" value="8" onclick="btn(8)" class="button">
+                <input type="button" value="9" onclick="btn(9)" class="button">
+                <input type="button" value="0" onclick="btn(0)" class="button">
+            </div>
+            <div id="start_select_cancle">
+                <div>
+                    <input type="button" value="게임시작" onclick="show_ans()" id="start">
+                </div>
+                <div>
+                    <input type="button" value="숫자 결정" onclick="play_game()" id="select">
+                </div>
+                <div>
+                    <input type="button" value="선택 취소" onclick="cancle_game()" id="cancle">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="num_baseball.js"></script>
+</body>
+
+</html>
